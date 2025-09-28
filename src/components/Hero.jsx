@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="flex-1 space-y-6">
         <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-900">
           Hello, I’m <br />
-          <span className="text-gray-900">Brooklyn Gilbert</span>
+          <span className="text-gray-900">Katragadda Chiranjeevi</span>
         </h2>
 
         <p className="text-lg text-gray-600 max-w-xl">
