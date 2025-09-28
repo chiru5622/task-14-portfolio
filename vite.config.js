@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/task-14-portfolio/',
+  // No need for `base` anymore
 })
