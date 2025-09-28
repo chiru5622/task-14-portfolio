@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import img1 from "../assets/img1.png";
 
 export default function Hero() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <section className="flex flex-col md:flex-row items-center justify-between py-16 px-6 md:px-20 bg-gradient-to-br from-white to-purple-50">
       {/* Left Side */}
@@ -18,7 +20,11 @@ export default function Hero() {
           through carefully crafted code and user-centric design.
         </p>
 
-        <button className="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow hover:bg-primary/90 transition">
+        {/* Button */}
+        <button
+          onClick={() => setIsOpen(true)}
+          className="px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg shadow hover:bg-purple-700 transition"
+        >
           Say Hello!
         </button>
 
@@ -47,6 +53,24 @@ export default function Hero() {
           className="w-80 h-auto rounded-2xl shadow-lg object-cover"
         />
       </div>
+
+      {/* Popup Modal */}
+      {isOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+          <div className="bg-white rounded-xl shadow-lg p-8 max-w-sm text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">👋 Hello!</h3>
+            <p className="text-gray-600 mb-6">
+              Thanks for reaching out. I’ll get back to you soon!
+            </p>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
